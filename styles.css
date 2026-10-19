@@ -886,3 +886,140 @@ button {
     transition: none !important;
   }
 }
+
+/* —— تقييمات الزوار (نموذج إضافة رأي) —— */
+.guest-review-block {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.guest-review-block > .eyebrow {
+  margin-bottom: 0.35rem;
+}
+
+.guest-review-layout {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+}
+
+@media (min-width: 900px) {
+  .guest-review-layout {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: start;
+  }
+}
+
+.guest-reviews-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.guest-reviews-empty {
+  padding: 1.25rem;
+  border: 1px dashed var(--line);
+  border-radius: 1rem;
+  background: var(--cream);
+}
+
+.guest-review-card {
+  animation: guestFade 0.35s ease;
+}
+
+@keyframes guestFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rating-stars {
+  display: inline-flex;
+  gap: 0.2rem;
+  direction: ltr;
+  margin: 0.35rem 0 0.75rem;
+}
+
+.rating-stars button {
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--line);
+  padding: 0.15rem 0.2rem;
+  border-radius: 0.35rem;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.rating-stars button.is-active {
+  color: var(--ember);
+}
+
+.rating-stars button:hover,
+.rating-stars button:focus-visible {
+  transform: scale(1.12);
+  color: var(--chili);
+}
+
+.guest-review-form textarea {
+  width: 100%;
+  min-height: 6.5rem;
+  resize: vertical;
+  margin-top: 0.35rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.guest-review-form textarea:focus {
+  outline: 2px solid var(--chili);
+  outline-offset: 1px;
+}
+
+.guest-review-form .check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.guest-review-form .check-row input {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.15rem;
+  accent-color: var(--chili);
+  flex-shrink: 0;
+}
+
+.review-form-msg {
+  margin-top: 0.85rem;
+  font-size: 0.9rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 0.65rem;
+}
+
+.review-form-msg.is-error {
+  background: #fde8e6;
+  color: var(--chili-deep);
+}
+
+.review-form-msg.is-success {
+  background: var(--ember-soft);
+  color: var(--ink-soft);
+}
+
+.guest-review-note {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}

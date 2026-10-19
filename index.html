@@ -250,6 +250,40 @@
               </figcaption>
             </figure>
           </div>
+          
+          <div class="guest-review-block">
+            <p class="eyebrow">شارك رأيك</p>
+            <h3 style="font-family: var(--font-display); font-size: 1.6rem; margin-top: 0.25rem">قيّم زيارتك من هنا</h3>
+            <p class="muted" style="margin-top: 0.5rem; max-width: 36rem">اكتب تجربتك باختصار. التقييم يظهر مباشرة في الصفحة، ويمكن إرساله للمطعم عبر واتساب.</p>
+            <div class="guest-review-layout">
+              <div>
+                <div class="guest-reviews-list" id="guest-reviews-list" aria-live="polite"></div>
+              </div>
+              <form class="form-card guest-review-form" id="guest-review-form" novalidate>
+                <label for="review-name">اسمك</label>
+                <input id="review-name" name="name" autocomplete="name" placeholder="مثال: أحمد" required minlength="2" maxlength="40" />
+                <label style="margin-top: 1rem">التقييم</label>
+                <div class="rating-stars" id="rating-stars" role="radiogroup" aria-label="اختر من نجمة إلى خمس">
+                  <button type="button" data-star="1" role="radio" aria-checked="false">☆</button>
+                  <button type="button" data-star="2" role="radio" aria-checked="false">☆</button>
+                  <button type="button" data-star="3" role="radio" aria-checked="false">☆</button>
+                  <button type="button" data-star="4" role="radio" aria-checked="false">☆</button>
+                  <button type="button" data-star="5" role="radio" aria-checked="true">★</button>
+                </div>
+                <input type="hidden" id="review-rating" name="rating" value="5" />
+                <label for="review-comment">رأيك</label>
+                <textarea id="review-comment" name="comment" required minlength="8" maxlength="400" placeholder="وش أعجبك؟ الجودة، الاستقبال، السعر…"></textarea>
+                <label class="check-row" for="review-send-wa">
+                  <input type="checkbox" id="review-send-wa" name="send_wa" checked />
+                  <span>أرسل نسخة من التقييم للمطعم عبر واتساب</span>
+                </label>
+                <p class="review-form-msg" id="review-form-msg" hidden></p>
+                <button type="submit" class="btn btn-chili" style="width: 100%; margin-top: 1.15rem">نشر التقييم</button>
+                <p class="guest-review-note">التقييمات تُحفظ على جهازك وتظهر في هذه الصفحة. لإظهارها للجميع بشكل دائم يلزم ربط لاحق بخدمة أو قاعدة بيانات.</p>
+              </form>
+            </div>
+          </div>
+
           <a class="btn btn-chili" href="#visit" style="margin-top: 2rem">زُرنا اليوم</a>
         </div>
       </section>
@@ -334,5 +368,6 @@
     </div>
 
     <script src="app.js" defer></script>
+    <script src="reviews.js" defer></script>
   </body>
 </html>
